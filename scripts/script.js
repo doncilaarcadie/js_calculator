@@ -8,10 +8,6 @@ let CEpressed = false;
 let lastValue = 0;
 let currentValue = 0;
 
-// const display = document.createElement('input');
-// display.classList.add('display');
-// container.appendChild(display);
-
 const display = document.createElement('input');
 display.classList.add('display');
 display.disabled = true;
@@ -33,8 +29,7 @@ container.appendChild(acButton);
 function clickAC(){
     lastValue = 0;
     currentValue = 0;
-    display.value = 0;
-    
+    display.value = 0;    
 }
 
 const ceButton = document.createElement('button');
@@ -47,7 +42,7 @@ function clickCE(){
     display.value = display.value.slice(0, -1);
     currentValue = Number(display.value);
     console.log('slice');
-    console.log(lastValue, currentValue);
+
     CEpressed = true;
 }
 
@@ -66,28 +61,16 @@ container.appendChild(operatorsContainer);
 
 function clickOperator(e){
     operatorPressed = true;
-
-    // if(CEpressed == true){
-    //     lastValue = currentValue;
-    //     CEpressed = false;
-    //     console.log('trick');
-    // }
-   
+    
     if(lastValue != 0){
-        if(eqPressed == false){
-            calculation(); 
+        if(eqPressed == false){//calculation for multiple times
+            calculation();      // click on operators button
         }
-    }   
-       
+    }          
     operator = e.target.textContent;
-    lastValue = Number(display.value);
+    lastValue = Number(display.value);       
     
-    
-    console.log(lastValue, currentValue);
-    
-    
-    decimalPressed = false;   
-    
+    decimalPressed = false;      
 }
 
 let digitsArray = ['7','8','9','4','5','6','1','2','3','0']
@@ -106,8 +89,7 @@ function clickDigit(e){
     }   
     display.value += e.target.textContent;
     currentValue = Number(display.value);    
-    console.log(lastValue, currentValue);
-    //console.log(typeof display.value);  
+    
     if (display.value.length > 10) {
         display.value = display.value.slice(0,10); 
     }
@@ -141,88 +123,29 @@ function calculation(){
 
         case '+':
             display.value = lastValue + currentValue;
-            lastValue += currentValue;
-            console.log(lastValue, currentValue);            
+            lastValue += currentValue;                    
             break;
         case '-':
             display.value = lastValue - currentValue;
-            lastValue -= currentValue;
-            console.log(lastValue, currentValue);        
+            lastValue -= currentValue;                
             break;
         case 'x':
             display.value = lastValue * currentValue;
-            lastValue *= currentValue;
-            console.log(lastValue, currentValue);            
+            lastValue *= currentValue;                    
             break;
         case '÷':
 
             if(currentValue == 0){
                 let errMs = document.querySelector('.display');
-                errMs.textContent = 'Can not divide by 0 !'; 
-                errMs.setAttribute('style', 'font-size: 3rem;');
-                display.value = errMs.textContent;
-                
-            }else{
-                
+                errMs.textContent = 'Err ÷ 0';                 
+                display.value = errMs.textContent;  
+                break;              
+            }else{                
                 display.value = lastValue / currentValue;
-                lastValue /= currentValue;
-                console.log(lastValue, currentValue);            
-            break;  
+                lastValue /= currentValue;                        
+                break;  
             }
     
     }    
 }
 
-// function clickEq(){
-
-//     eqPressed = true;
-
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let check = document.createElement('button');
-// check.addEventListener('click', checkOp);
-// container.appendChild(check);
-
-// function checkOp(){
-//     alert(operator);
-// }
-
-
-
-
-
-
-
-
-
-
-
-// let operatorsContainer = document.createElement('div');
-// operatorsContainer.classList.add('operatorsContainer')
-// operatorsContainer.classList.add('operatorsContainer')
-// let operatorsArray = ['+','-','x','/'];
-// for(i of operatorsArray){
-//     let operatorButton = document.createElement('button');
-//     operatorButton.textContent = i;
-//     operatorButton.classList.add('operatorButton');
-//     operatorsContainer.appendChild(operatorButton);
-// }
-// container.appendChild(operatorsContainer);
