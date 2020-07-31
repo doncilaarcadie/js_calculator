@@ -1,0 +1,124 @@
+html {
+    
+    /*font-family: 'Open Sans', sans-serif;*/
+    /* font-family: 'Lacquer', serif ; */
+  }
+  body{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    /* border: 1px solid black; */
+    margin-top: 2rem;
+    background-color: rgb(160, 134, 160);   
+  }
+  break{
+    flex-basis: 100%;
+    width: 0px; 
+    height: 0px; 
+    overflow: hidden;
+  }
+
+  .container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);    
+    width: 25rem;
+    height: 30rem;
+    border: 1px solid black;
+    border-radius: 2%;
+    padding: 0.5rem;
+    background-color: #212121;    
+    box-shadow: 13px 13px 8px 2px rgba(0,0,0,0.75);
+    
+    
+  }
+  
+  @font-face{
+    src: url(Fonts/digital_counter_7.ttf);
+    font-family: digitalFont;
+  }
+  .display, .displayTransparent{       
+    grid-area: 1/1/1/5;
+    width: 23rem;
+    margin: 0.5rem auto;
+    font-size: 4rem;
+    font-family: digitalFont;
+    height: 6rem;
+    text-align: end;    
+    padding-right: 1rem;
+    background-color: #a2af77;    
+    color: black;
+  }
+  .displayTransparent{
+    opacity: 5%;
+  }
+
+  .acButton{
+    margin: 0.3rem;
+    grid-area: 2 / 1 / 2 / 3;
+    font-size: 2rem;
+    opacity: 85%;
+    background-color: #130f10;
+    color: white;    
+  }
+  .ceButton{
+    margin: 0.3rem;
+    grid-area: 2 / 3 / 2 / 5;
+    font-size: 3rem;
+    opacity: 90%;
+    background-color: #130f10;
+    color: white;
+
+  }
+  .allButton{
+    font-size: 2rem;
+    margin: 0.3rem;    
+    opacity: 90%;
+    background-color: #58595b;    
+    color: white;
+
+  }
+  .allButton:hover, .eqButton:hover, .operatorButton:hover, .acButton:hover, .ceButton:hover{
+    filter: brightness(70%);
+    transition: filter 150ms ease-in-out;
+  }
+
+
+  .operatorsContainer{
+    /* display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-column-start: 4;   
+    grid-row-start: 3;
+    grid-row-end: 5; 
+    justify-content: center;
+    align-items: center; */
+    grid-area: 3/4/7/5;
+  }
+  .operatorButton{
+    width: 5.5rem;
+    height: 3.95rem;
+    margin: 0.3rem;
+    font-size: 3rem;    
+    opacity: 90%;
+    background-color: #58595b;
+    color: white;
+  }
+  .decimalPoint{
+    font-size: 2rem;
+    margin: 0.3rem;    
+    opacity: 90%;
+    background-color: #58595b;
+    color: white;
+  }
+  .eqButton{
+    font-size: 2rem;
+    margin: 0.3rem;    
+    opacity: 90%;
+    background-color: #f15a2b;
+    color: white;
+  }
+
+  
+  h1{
+  font-family: digitalFont;
+  }
