@@ -76,29 +76,10 @@ html {
     background-color: #58595b;    
     color: white;
   }
-  .allButton:hover, .eqButton:hover, .operatorButton:hover, .acButton:hover, .ceButton:hover{
+  .allButton:hover, .eqButton:hover, .acButton:hover, .ceButton:hover{
     filter: brightness(70%);
     transition: filter 150ms ease-in-out;
-  }
-  .operatorsContainer{    
-    grid-area: 3/4/7/5;
-  }
-  .operatorButton{
-    width: 5.5rem;
-    height: 3.95rem;
-    margin: 0.3rem;
-    font-size: 3rem;    
-    opacity: 90%;
-    background-color: #58595b;
-    color: white;
-  }
-  .decimalPoint{
-    font-size: 2rem;
-    margin: 0.3rem;    
-    opacity: 90%;
-    background-color: #58595b;
-    color: white;
-  }
+  }  
   .eqButton{
     font-size: 2rem;
     margin: 0.3rem;    

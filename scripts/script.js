@@ -29,6 +29,7 @@ container.appendChild(acButton);
 function clickAC(){
     lastValue = 0;
     currentValue = 0;
+    decimalPressed = false;
     display.value = 0;    
 }
 
@@ -46,17 +47,19 @@ function clickCE(){
     CEpressed = true;
 }
 
-const operatorsContainer = document.createElement('div');
-operatorsContainer.classList.add('operatorsContainer');
+
 let operatorsArray = ['+','-','x','÷']
-for(i of operatorsArray){
+for(let[i, v] of operatorsArray.entries()){
     let operatorButton = document.createElement('button');
-    operatorButton.classList.add('operatorButton');
-    operatorButton.textContent = i;
+    operatorButton.classList.add('allButton');
+    operatorButton.textContent = v;
+    operatorButton.style.gridRow = i + 3;
+    operatorButton.style.gridColumn = 4;
+    console.log(i, v);
     operatorButton.addEventListener('click', clickOperator);
-    operatorsContainer.appendChild(operatorButton);
+    container.appendChild(operatorButton);
 }
-container.appendChild(operatorsContainer);
+
 
 
 function clickOperator(e){
@@ -98,7 +101,7 @@ function clickDigit(e){
 }
 
 const decimalPoint = document.createElement('button');
-decimalPoint.classList.add('decimalPoint');
+decimalPoint.classList.add('allButton');
 decimalPoint.textContent = '.';
 decimalPoint.addEventListener('click', clickDecimalPoint);
 container.appendChild(decimalPoint);
